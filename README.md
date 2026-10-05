@@ -1,5 +1,10 @@
 # typedstandards-host-template
 
+> **A scratch copy, deleted after use.** This repository measures publishing for
+> typedstandards #139: Pages deployed from `.github/workflows/publish.yml`, at
+> `https://publish-spike.typedstandards.org`, with records signed by a throwaway key.
+> The text below is the template's, unchanged, and describes the template, not this copy.
+
 A GitHub template repository for serving signed [Typed Standards](https://typedstandards.org)
 records from GitHub Pages under your own `did:key`. Copy it with "Use this template",
 replace the example record with your own, and its workflow checks on every push that

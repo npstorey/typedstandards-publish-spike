@@ -1,0 +1,18 @@
+{
+  "type": "content/analysis/v1",
+  "producerProfile": "scripted-recomputation/publish-spike",
+  "captureMethod": "script-run",
+  "prompt": "Sign spike record one as a file read from disk.",
+  "promptVisibility": "full_text",
+  "queries": [],
+  "dataSources": [],
+  "cost": {
+    "model": "none"
+  },
+  "skillMetadata": {},
+  "trace": {},
+  "signer": {
+    "bindingTier": "pseudonymous",
+    "displayName": "typedstandards-publish-spike (throwaway key)"
+  }
+}

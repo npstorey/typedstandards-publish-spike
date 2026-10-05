@@ -1,0 +1,42 @@
+{
+  "package": {
+    "metadata": {
+      "schemaVersion": "0.1.0",
+      "packageId": "bb4d7a28-1521-4c43-a238-20b4163d88b6",
+      "createdAt": "2026-10-05T00:50:35.254Z",
+      "signingKeyId": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp",
+      "captureMethod": "script-run"
+    },
+    "producerProfile": "scripted-recomputation/publish-spike",
+    "type": "content/analysis/v1",
+    "signer": {
+      "bindingTier": "pseudonymous",
+      "displayName": "typedstandards-publish-spike (throwaway key)",
+      "identifier": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+    },
+    "contentCanonicalization": "https://typedstandards.org/canonicalization/raw-bytes/v1",
+    "prompt": {
+      "hash": "c0be0a5e9aae5290038ce0cb3aa63ec30ef9c2452c795121413bad326f1be22e",
+      "visibility": "full_text",
+      "text": "Sign spike record one as a file read from disk."
+    },
+    "queries": [],
+    "dataSources": [],
+    "cost": {
+      "model": "none"
+    },
+    "skillMetadata": {},
+    "output": "# Spike record one\n\nA throwaway record for the publishing measurements of typedstandards #139. It is\nserved when the scratch copy is set up and withdrawn during the measurements. Its key\nwas made for this spike and kept nowhere, and the repository serving it is deleted\nafter the spike.\n",
+    "trace": {},
+    "contentHash": {
+      "sha256": "3559f6242c38104ebe9b5c0b12830715fee7d56a9e50f78fc4dfe6d15cfa0430"
+    }
+  },
+  "envelopeHash": "3ca563c4d8cb31b99569b22611250b972ea0126f3e96deb9df32950f07d0c1d1",
+  "signature": {
+    "signature": "Uj6zPbbsiUDLdeFaLCy8sK/gtSeZC9Yl0xgjE+ock05a/rHluF//+bjQc7KMjd0ybTfTYA56m+Bc/jaVpY0fCA==",
+    "publicKey": "MCowBQYDK2VwAyEApvlZOcIiH9HC++YzgvGHGc95mLY0cnj3jPJ1pFjtysE=",
+    "algorithm": "Ed25519ph",
+    "kid": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+  }
+}

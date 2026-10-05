@@ -1,0 +1,70 @@
+# On every push to main, and on demand, on Node 24:
+#   - npm ci installs the exact versions package-lock.json pins;
+#   - typedstandards-host build writes the served tree from host.json and records/ into a
+#     fresh directory under $RUNNER_TEMP, beside the hand-written docs/ files;
+#   - typedstandards-host verify verifies every record in that tree offline, and its output
+#     goes to the run summary;
+#   - display.mjs reads every record through host-policy.json, and none is refused;
+#   - the tree is uploaded, dotfiles included (.well-known/), and deployed to Pages.
+# A failed step deploys nothing, and the site stays as it was.
+# The job signs nothing: it holds no key and reads no repository secret.
+# Each action is pinned to a full commit SHA, measured with git ls-remote, with its tag in a comment.
+name: publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm ci
+      - name: npx typedstandards-host build, into $RUNNER_TEMP/site
+        run: |
+          mkdir "$RUNNER_TEMP/site"
+          cp docs/index.html docs/.nojekyll "$RUNNER_TEMP/site/"
+          npx typedstandards-host build --out "$RUNNER_TEMP/site"
+      - name: npx typedstandards-host verify, into the run summary
+        shell: bash
+        run: |
+          npx typedstandards-host verify --out "$RUNNER_TEMP/site" | tee "$RUNNER_TEMP/verify-output.txt"
+          { echo '```'; cat "$RUNNER_TEMP/verify-output.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: node display.mjs, over the built index
+        run: |
+          # display.mjs reads docs/records.json; this checkout is the job's own copy.
+          cp "$RUNNER_TEMP/site/records.json" docs/records.json
+          node display.mjs
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ${{ runner.temp }}/site
+          # The default, false, leaves out .well-known/typed-publisher.json.
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
