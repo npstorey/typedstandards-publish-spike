@@ -17,6 +17,15 @@
       "extensions": {
         "role": "notebook"
       }
+    },
+    {
+      "name": "spike-two",
+      "signed": "records/spike-two.signed.json",
+      "attestations": [],
+      "title": "Spike record two",
+      "extensions": {
+        "role": "notebook"
+      }
     }
   ]
 }

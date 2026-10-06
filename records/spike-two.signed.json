@@ -1,0 +1,42 @@
+{
+  "package": {
+    "metadata": {
+      "schemaVersion": "0.1.0",
+      "packageId": "434e1c3c-ce28-4d9a-b447-7d232513af85",
+      "createdAt": "2026-10-05T00:50:35.325Z",
+      "signingKeyId": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp",
+      "captureMethod": "script-run"
+    },
+    "producerProfile": "scripted-recomputation/publish-spike",
+    "type": "content/analysis/v1",
+    "signer": {
+      "bindingTier": "pseudonymous",
+      "displayName": "typedstandards-publish-spike (throwaway key)",
+      "identifier": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+    },
+    "contentCanonicalization": "https://typedstandards.org/canonicalization/raw-bytes/v1",
+    "prompt": {
+      "hash": "4bdb92ffbaac8e96417bbaa80a8d8907284c93add9b65f459fb8c14efeda8e3f",
+      "visibility": "full_text",
+      "text": "Sign spike record two as a file read from disk."
+    },
+    "queries": [],
+    "dataSources": [],
+    "cost": {
+      "model": "none"
+    },
+    "skillMetadata": {},
+    "output": "# Spike record two\n\nA throwaway record for the publishing measurements of typedstandards #139. It is\nwritten to the repository through the GitHub API with a token limited to the\nrepository. Its key was made for this spike and kept nowhere, and the repository\nserving it is deleted after the spike.\n",
+    "trace": {},
+    "contentHash": {
+      "sha256": "ea7fb2921498475a0033cd89c37dadf58e89ae69ca5b744c9f876d02c45f4e2d"
+    }
+  },
+  "envelopeHash": "010c5cf094355d6c008bcf84181c513370339407d1642c87318c7e930a08d0a6",
+  "signature": {
+    "signature": "ucrZoG9wN0pMYkc6dmKmxdjACwJ2NaJGfYIlTMPXUVlHU5ApFvi7DrWnQQ7OKOTsrCb1LuGJgCtLUxZVs4rYBg==",
+    "publicKey": "MCowBQYDK2VwAyEApvlZOcIiH9HC++YzgvGHGc95mLY0cnj3jPJ1pFjtysE=",
+    "algorithm": "Ed25519ph",
+    "kid": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+  }
+}
