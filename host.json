@@ -12,7 +12,9 @@
     {
       "name": "spike-one",
       "signed": "records/spike-one.signed.json",
-      "attestations": [],
+      "attestations": [
+        "records/spike-one.withdrawal.json"
+      ],
       "title": "Spike record one",
       "extensions": {
         "role": "notebook"
