@@ -1,0 +1,30 @@
+{
+  "node": {
+    "metadata": {
+      "schemaVersion": "0.1.0",
+      "packageId": "3387244d-b1e1-4102-af2b-15c685564b63",
+      "createdAt": "2026-10-05T00:50:35.395Z",
+      "signingKeyId": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+    },
+    "type": "attestation/withdraws/v1",
+    "signer": {
+      "bindingTier": "pseudonymous",
+      "displayName": "typedstandards-publish-spike (throwaway key)",
+      "identifier": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+    },
+    "targetNodeId": "3ca563c4d8cb31b99569b22611250b972ea0126f3e96deb9df32950f07d0c1d1",
+    "contentCanonicalization": "https://typedstandards.org/canonicalization/legacy-json/v1",
+    "reason": "Withdrawn to measure how long a changed bundle takes to show (typedstandards #139).",
+    "effectiveAt": "2026-10-05T00:50:35.395Z",
+    "contentHash": {
+      "sha256": "61e908442088a9ac5841fcd199f0e6366f3218d2837d242e8da57b569d3d1fd6"
+    }
+  },
+  "nodeId": "1eb851b2a8b35b5e3bc2cfce57a15b8b815e8127de6fc2d4d49fab656cc9506b",
+  "signature": {
+    "signature": "ZfOpNchZ0GPWIfOV+BA26IfqqFbBB0IOVjstNwgUOYWqAtNpOQgdYxD24GfeZkod0OORWVjavduGukeY0+MGAw==",
+    "publicKey": "MCowBQYDK2VwAyEApvlZOcIiH9HC++YzgvGHGc95mLY0cnj3jPJ1pFjtysE=",
+    "algorithm": "Ed25519ph",
+    "kid": "did:key:z6Mkqh4FMw6Fms49KikXv9ZRX7MMLJk3hxMboU55TK4gX4pp"
+  }
+}
